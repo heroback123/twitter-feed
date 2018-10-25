@@ -2,7 +2,7 @@
 box:
   id: openjdk:8
   ports:
-    - 8080
+    - $PORT
 
 #Build our application using Maven, just as we always have 
 build:
@@ -16,7 +16,7 @@ build:
 push-release:
   steps:
     - internal/docker-push:
-       username: $DOCKER_USERNAME
+        username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         repository: $DOCKER_REPO
         registry: $DOCKER_REGISTRY
