@@ -16,11 +16,12 @@ build:
 push-release:
   steps:
     - internal/docker-push:
-        username: chengwang@21cn.com
-        password: Shen2806
-        repository: twitter-feed
-        registry: heroback123
+       username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        repository: $DOCKER_REPO
+        registry: $DOCKER_REGISTRY
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         working-dir: /pipeline/source
-        ports: 8080
+        ports: $PORT
         cmd: sh target/bin/start
+
