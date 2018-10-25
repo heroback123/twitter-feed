@@ -16,7 +16,7 @@ build:
 push-release:
   steps:
     - internal/docker-push:
-        username: heroback123
+        username: chengwang@21cn.com
         password: Shen2806
         repository: twitter-feed
         registry: heroback123
