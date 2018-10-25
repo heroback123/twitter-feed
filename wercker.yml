@@ -2,7 +2,7 @@
 box:
   id: openjdk:8
   ports:
-    - $PORT
+    - 8080
 
 #Build our application using Maven, just as we always have 
 build:
@@ -16,11 +16,11 @@ build:
 push-release:
   steps:
     - internal/docker-push:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
-        repository: $DOCKER_REPO
-        registry: $DOCKER_REGISTRY
+        username: heroback123
+        password: Shen2806
+        repository: twitter-feed
+        registry: heroback123
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         working-dir: /pipeline/source
-        ports: $PORT
+        ports: 8080
         cmd: sh target/bin/start
