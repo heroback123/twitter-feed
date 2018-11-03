@@ -43,5 +43,5 @@ deploy-to-cluster:
         server: $KUBERNETES_MASTER
         #username: $KUBERNETES_USERNAME
         token: $KUBERNETES_TOKEN
-        insecure-skip-tls-verify: true
+        insecure-skip-tls-verify: true 
         command: apply -f kubernetes.yml
